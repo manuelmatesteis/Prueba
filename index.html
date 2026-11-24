@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Álgebra y Geometría · 2º Bachillerato (Lo esencial)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Barra de navegación superior -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#inicio">
+        <span class="brand-badge">2º BAC</span>
+        <span>Álgebra y Geometría · Lo esencial</span>
+      </a>
+      <nav class="nav-tabs" aria-label="Filtrar contenido">
+        <button class="nav-btn active" data-filter="all">Todo</button>
+        <button class="nav-btn" data-filter="algebra">Álgebra</button>
+        <button class="nav-btn" data-filter="geometria">Geometría</button>
+        <button class="nav-btn" data-filter="quiz">Mini-test</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Portada -->
+  <section class="hero" id="inicio">
+    <div class="hero-card">
+      <span class="hero-kicker">Matemáticas II · Guía rápida</span>
+      <h1>Lo más sencillo de Álgebra y Geometría en 2º de Bachillerato</h1>
+      <p>
+        Un resumen claro, sin rodeos y con ejemplos cortos para entender de verdad
+        las ideas fundamentales antes de lanzarte a los ejercicios tipo PAU.
+      </p>
+      <div class="quick-index">
+        <a class="pill-link algebra" href="#matrices"><span class="dot"></span>1. Matrices</a>
+        <a class="pill-link algebra" href="#determinantes"><span class="dot"></span>2. Determinantes</a>
+        <a class="pill-link algebra" href="#sistemas"><span class="dot"></span>3. Sistemas</a>
+        <a class="pill-link geometria" href="#vectores"><span class="dot"></span>4. Vectores</a>
+        <a class="pill-link geometria" href="#rectas-planos"><span class="dot"></span>5. Rectas y planos</a>
+        <a class="pill-link geometria" href="#metrica"><span class="dot"></span>6. Posiciones y distancias</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+
+    <!-- ==================== BLOQUE I: ÁLGEBRA ==================== -->
+    <section class="block-section" id="bloque-algebra" data-block="algebra">
+      <div class="block-header">
+        <span class="block-tag algebra">Bloque I</span>
+        <h2>Álgebra Lineal</h2>
+      </div>
+
+      <!-- TEMA 1: MATRICES -->
+      <article class="topic-card algebra" id="matrices">
+        <div class="topic-top">
+          <h3>1. Matrices</h3>
+          <span class="topic-num">Tema 1 · Álgebra</span>
+        </div>
+
+        <div class="one-liner">
+          <strong>En una frase:</strong> una matriz es simplemente una tabla rectangular de números ordenada en <strong>filas</strong> (horizontal) y <strong>columnas</strong> (vertical).
+        </div>
+
+        <div class="grid-2">
+          <div class="sub-box">
+            <h4>Dimensión y tipos básicos</h4>
+            <p>Su tamaño es <strong>filas × columnas</strong> (<span class="math-inline">m × n</span>). Por ejemplo, una matriz <span class="math-inline">2 × 3</span> tiene 2 filas y 3 columnas.</p>
+            <ul style="margin-top: 0.45rem;">
+              <li><strong>Cuadrada:</strong> mismas filas que columnas (<span class="math-inline">2×2</span>, <span class="math-inline">3×3</span>).</li>
+              <li><strong>Identidad (I):</strong> cuadrada con 1 en la diagonal principal y 0 en el resto. Funciona como el «1» en los números.</li>
+              <li><strong>Traspuesta (A<sup>t</sup>):</strong> cambias filas por columnas.</li>
+            </ul>
+          </div>
+
+          <div class="sub-box">
+            <h4>Operaciones clave</h4>
+            <ul>
+              <li><strong>Sumar / restar:</strong> solo si tienen la misma dimensión. Se hace elemento a elemento.</li>
+              <li><strong>Por un número:</strong> multiplicas todos los elementos por ese número.</li>
+              <li><strong>Multiplicar A · B:</strong> solo se puede si las columnas de A coinciden con las filas de B:
+                <div class="formula">
+                  <span>(m × <strong>n</strong>) · (<strong>n</strong> × p) = (m × p)</span>
+                </div>
+                Se multiplica siempre <strong>fila por columna</strong>. ¡Cuidado! En general <span class="math-inline">A · B ≠ B · A</span>.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sub-box">
+          <h4>La matriz inversa (A<sup>−1</sup>)</h4>
+          <p>Es la matriz que, al multiplicarla por A, devuelve la identidad: <span class="math-inline">A · A<sup>−1</sup> = I</span>. Solo existe si A es <strong>cuadrada</strong> y su <strong>determinante no es cero</strong> (<span class="math-inline">|A| ≠ 0</span>).</p>
+          <div class="formula">
+            <span>A<sup>−1</sup> =</span>
+            <span class="frac"><span class="num">1</span><span class="den">|A|</span></span>
+            <span>· (Adj(A))<sup>t</sup></span>
+          </div>
+        </div>
+
+        <div class="example-box">
+          <div class="callout-title">Ejemplo rápido · Multiplicar dos matrices 2×2</div>
+          <div class="formula left">
+            <span class="matrix cols-2">
+              <span>1</span><span>2</span>
+              <span>0</span><span>3</span>
+            </span>
+            <span>·</span>
+            <span class="matrix cols-2">
+              <span>4</span><span>1</span>
+              <span>2</span><span>5</span>
+            </span>
+            <span>=</span>
+            <span class="matrix cols-2">
+              <span>1·4 + 2·2</span><span>1·1 + 2·5</span>
+              <span>0·4 + 3·2</span><span>0·1 + 3·5</span>
+            </span>
+            <span>=</span>
+            <span class="matrix cols-2">
+              <span>8</span><span>11</span>
+              <span>6</span><span>15</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="tip-box">
+          <strong>Truco de examen:</strong> en ecuaciones matriciales como <span class="math-inline">A·X = B</span>, nunca «dividas» por A. Multiplica por <span class="math-inline">A<sup>−1</sup></span> en el <strong>mismo lado</strong> en ambos miembros: <span class="math-inline">X = A<sup>−1</sup> · B</span>.
+        </div>
+      </article>
+
+      <!-- TEMA 2: DETERMINANTES -->
+      <article class="topic-card algebra" id="determinantes">
+        <div class="topic-top">
+          <h3>2. Determinantes</h3>
+          <span class="topic-num">Tema 2 · Álgebra</span>
+        </div>
+
+        <div class="one-liner">
+          <strong>En una frase:</strong> el determinante es un <strong>único número</strong> que asociamos a cualquier matriz cuadrada y que nos dice al instante si tiene inversa y cuál es su rango.
+        </div>
+
+        <div class="grid-2">
+          <div class="sub-box">
+            <h4>Determinante 2×2 (productos en cruz)</h4>
+            <div class="formula">
+              <span class="matrix det cols-2">
+                <span>a</span><span>b</span>
+                <span>c</span><span>d</span>
+              </span>
+              <span>= a·d − b·c</span>
+            </div>
+            <p>Diagonal principal menos diagonal secundaria.</p>
+          </div>
+
+          <div class="sub-box">
+            <h4>Determinante 3×3 (Regla de Sarrus)</h4>
+            <p>Se suman los 3 productos que «bajan» hacia la derecha y se restan los 3 que «suben» hacia la derecha:</p>
+            <div class="formula" style="font-size: 0.94rem;">
+              <span>(a<sub>11</sub>a<sub>22</sub>a<sub>33</sub> + a<sub>12</sub>a<sub>23</sub>a<sub>31</sub> + a<sub>13</sub>a<sub>21</sub>a<sub>32</sub>) − (a<sub>13</sub>a<sub>22</sub>a<sub>31</sub> + a<sub>12</sub>a<sub>21</sub>a<sub>33</sub> + a<sub>11</sub>a<sub>23</sub>a<sub>32</sub>)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="sub-box">
+            <h4>¿Para qué sirve realmente?</h4>
+            <ul>
+              <li><strong>Saber si existe A<sup>−1</sup>:</strong> existe si y solo si <span class="math-inline">|A| ≠ 0</span>.</li>
+              <li><strong>Calcular el rango de una matriz:</strong> el rango es el tamaño del mayor determinante distinto de cero que puedas encontrar dentro de la matriz.</li>
+            </ul>
+          </div>
+          <div class="sub-box">
+            <h4>4 propiedades que te ahorran cuentas</h4>
+            <ul>
+              <li>Si una fila/columna es todo ceros → <span class="math-inline">|A| = 0</span>.</li>
+              <li>Si dos filas/columnas son iguales o proporcionales → <span class="math-inline">|A| = 0</span>.</li>
+              <li><span class="math-inline">|A · B| = |A| · |B|</span> y <span class="math-inline">|A<sup>t</sup>| = |A|</span>.</li>
+              <li>Si multiplicas toda una matriz <span class="math-inline">n×n</span> por <span class="math-inline">k</span>: <span class="math-inline">|k·A| = k<sup>n</sup>·|A|</span>.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Calculadora interactiva de determinantes -->
+        <div class="lab-box">
+          <div class="lab-header">
+            <span class="lab-title">Prueba tú · Calculadora de determinantes</span>
+            <div class="seg-toggle" role="group" aria-label="Tamaño de matriz">
+              <button class="seg-btn active" id="btn-det-2" type="button">2×2</button>
+              <button class="seg-btn" id="btn-det-3" type="button">3×3 (Sarrus)</button>
+            </div>
+          </div>
+          <div class="lab-controls">
+            <div class="matrix-inputs size-2" id="det-grid"></div>
+            <div class="lab-result" id="det-output"></div>
+          </div>
+        </div>
+
+        <div class="tip-box">
+          <strong>Truco de examen:</strong> cuando te piden «estudia para qué valores de <em>m</em> la matriz tiene inversa», calcula <span class="math-inline">|A|</span>, iguálalo a 0 y resuelve la ecuación. Para cualquier <strong>otro</strong> valor de <em>m</em>, sí tiene inversa.
+        </div>
+      </article>
+
+      <!-- TEMA 3: SISTEMAS DE ECUACIONES -->
+      <article class="topic-card algebra" id="sistemas">
+        <div class="topic-top">
+          <h3>3. Sistemas de ecuaciones lineales</h3>
+          <span class="topic-num">Tema 3 · Álgebra</span>
+        </div>
+
+        <div class="one-liner">
+          <strong>En una frase:</strong> un sistema de ecuaciones se escribe en forma matricial como <span class="math-inline">A · X = B</span>, donde <strong>A</strong> son los coeficientes y <strong>A*</strong> es la matriz ampliada (A pegada a los términos independientes B).
+        </div>
+
+        <div class="sub-box" style="margin-bottom: 1rem;">
+          <h4>Teorema de Rouché-Fröbenius (clasificar sin resolver)</h4>
+          <p style="margin-bottom: 0.6rem;">Solo tienes que comparar tres números: el rango de A (<span class="math-inline">rg(A)</span>), el rango de la ampliada (<span class="math-inline">rg(A*)</span>) y el número de incógnitas (<span class="math-inline">n</span>).</p>
+
+          <table class="clean-table">
+            <thead>
+              <tr>
+                <th>Condición de rangos</th>
+                <th>Tipo de sistema</th>
+                <th>¿Cuántas soluciones tiene?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="math-inline">rg(A) = rg(A*) = n</span></td>
+                <td><span class="badge-status badge-scd">SCD</span> Compatible Determinado</td>
+                <td><strong>1 solución única</strong> (un punto concreto).</td>
+              </tr>
+              <tr>
+                <td><span class="math-inline">rg(A) = rg(A*) &lt; n</span></td>
+                <td><span class="badge-status badge-sci">SCI</span> Compatible Indeterminado</td>
+                <td><strong>Infinitas soluciones</strong> (depende de <span class="math-inline">n − rg(A)</span> parámetros, ej. <span class="math-inline">z = λ</span>).</td>
+              </tr>
+              <tr>
+                <td><span class="math-inline">rg(A) ≠ rg(A*)</span></td>
+                <td><span class="badge-status badge-si">SI</span> Incompatible</td>
+                <td><strong>Ninguna solución</strong> (ecuaciones contradictorias).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="grid-2">
+          <div class="sub-box">
+            <h4>¿Cómo se resuelve?</h4>
+            <ul>
+              <li><strong>Método de Gauss:</strong> haces ceros debajo de la diagonal combinando filas hasta que queda escalonado y despejas de abajo arriba. Sirve para <em>todos</em> los sistemas.</li>
+              <li><strong>Regla de Cramer:</strong> solo para sistemas SCD (<span class="math-inline">|A| ≠ 0</span>). Cada incógnita es el cociente de dos determinantes: sustituyes su columna por los términos independientes B y divides entre <span class="math-inline">|A|</span>.</li>
+            </ul>
+          </div>
+
+          <div class="sub-box">
+            <h4>Caso especial muy fácil: homogéneos</h4>
+            <p>Son los sistemas igualados a <strong>0</strong> (<span class="math-inline">A·X = 0</span>). <strong>Siempre son compatibles</strong> porque <span class="math-inline">(0, 0, 0)</span> siempre es solución.</p>
+            <ul style="margin-top: 0.4rem;">
+              <li>Si <span class="math-inline">|A| ≠ 0</span> → solo la solución trivial <span class="math-inline">(0, 0, 0)</span>.</li>
+              <li>Si <span class="math-inline">|A| = 0</span> → infinitas soluciones.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tip-box">
+          <strong>Truco de examen:</strong> en un sistema <span class="math-inline">3×3</span> con un parámetro <em>k</em>, empieza siempre calculando <span class="math-inline">|A|</span>. Donde <span class="math-inline">|A| ≠ 0</span> ya sabes automáticamente que es <strong>SCD</strong>. Solo te queda sustituir los 1 o 2 valores donde <span class="math-inline">|A| = 0</span> y mirar los rangos.
+        </div>
+      </article>
+    </section>
+
+    <!-- ==================== BLOQUE II: GEOMETRÍA ==================== -->
+    <section class="block-section" id="bloque-geometria" data-block="geometria">
+      <div class="block-header">
+        <span class="block-tag geometria">Bloque II</span>
+        <h2>Geometría en el Espacio (ℝ³)</h2>
+      </div>
+
+      <!-- TEMA 4: VECTORES -->
+      <article class="topic-card geometria" id="vectores">
+        <div class="topic-top">
+          <h3>4. Vectores en el espacio</h3>
+          <span class="topic-num">Tema 4 · Geometría</span>
+        </div>
+
+        <div class="one-liner">
+          <strong>En una frase:</strong> un punto <span class="math-inline">P(x, y, z)</span> marca una posición fija, mientras que un vector <span class="math-inline"><span class="vec">v</span> = (v<sub>1</sub>, v<sub>2</sub>, v<sub>3</sub>)</span> marca un <strong>desplazamiento</strong> (dirección, sentido y longitud).
+        </div>
+
+        <div class="grid-3">
+          <div class="sub-box">
+            <h4>Vector entre dos puntos</h4>
+            <p>Siempre «extremo menos origen»:</p>
+            <div class="formula">
+              <span><span class="vec">AB</span> = B − A</span>
+            </div>
+            <p><strong>Punto medio:</strong></p>
+            <div class="formula">
+              <span>M =</span>
+              <span class="frac"><span class="num">A + B</span><span class="den">2</span></span>
+            </div>
+          </div>
+
+          <div class="sub-box">
+            <h4>Módulo (longitud)</h4>
+            <p>Es el teorema de Pitágoras en 3D:</p>
+            <div class="formula">
+              <span>|<span class="vec">u</span>| = √(u<sub>1</sub>² + u<sub>2</sub>² + u<sub>3</sub>²)</span>
+            </div>
+            <p>Sirve para medir la distancia entre dos puntos: <span class="math-inline">d(A, B) = |<span class="vec">AB</span>|</span>.</p>
+          </div>
+
+          <div class="sub-box">
+            <h4>¿Son paralelos?</h4>
+            <p>Dos vectores son paralelos (proporcionales) si al dividir sus coordenadas da siempre lo mismo:</p>
+            <div class="formula">
+              <span class="frac"><span class="num">u<sub>1</sub></span><span class="den">v<sub>1</sub></span></span>
+              <span>=</span>
+              <span class="frac"><span class="num">u<sub>2</sub></span><span class="den">v<sub>2</sub></span></span>
+              <span>=</span>
+              <span class="frac"><span class="num">u<sub>3</sub></span><span class="den">v<sub>3</sub></span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="sub-box">
+            <h4>Producto escalar (<span class="vec">u</span> · <span class="vec">v</span>) → da un NÚMERO</h4>
+            <div class="formula">
+              <span><span class="vec">u</span> · <span class="vec">v</span> = u<sub>1</sub>v<sub>1</sub> + u<sub>2</sub>v<sub>2</sub> + u<sub>3</sub>v<sub>3</sub></span>
+            </div>
+            <ul>
+              <li><strong>Superpoder 1 (perpendicularidad):</strong> si <span class="math-inline"><span class="vec">u</span> · <span class="vec">v</span> = 0</span>, forman 90° (<span class="math-inline"><span class="vec">u</span> ⊥ <span class="vec">v</span></span>).</li>
+              <li><strong>Superpoder 2 (ángulo):</strong> <span class="math-inline">cos α = (<span class="vec">u</span>·<span class="vec">v</span>) / (|<span class="vec">u</span>|·|<span class="vec">v</span>|)</span>.</li>
+            </ul>
+          </div>
+
+          <div class="sub-box">
+            <h4>Producto vectorial (<span class="vec">u</span> × <span class="vec">v</span>) → da un VECTOR</h4>
+            <div class="formula">
+              <span><span class="vec">u</span> × <span class="vec">v</span> =</span>
+              <span class="matrix det cols-3">
+                <span><span class="vec">i</span></span><span><span class="vec">j</span></span><span><span class="vec">k</span></span>
+                <span>u<sub>1</sub></span><span>u<sub>2</sub></span><span>u<sub>3</sub></span>
+                <span>v<sub>1</sub></span><span>v<sub>2</sub></span><span>v<sub>3</sub></span>
+              </span>
+            </div>
+            <ul>
+              <li><strong>Superpoder 1:</strong> fabrica un vector <strong>perpendicular a ambos</strong> a la vez (clave para hallar el vector normal de un plano).</li>
+              <li><strong>Superpoder 2 (áreas):</strong> el área del paralelogramo es <span class="math-inline">|<span class="vec">u</span> × <span class="vec">v</span>|</span>, y la del triángulo la mitad.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Laboratorio interactivo de vectores -->
+        <div class="lab-box">
+          <div class="lab-header">
+            <span class="lab-title">Prueba tú · Laboratorio rápido de vectores en ℝ³</span>
+          </div>
+          <div class="lab-controls">
+            <div>
+              <div class="vec-input-row">
+                <label for="u1"><span class="vec">u</span> = (</label>
+                <input class="num-input vec-in" id="u1" type="number" value="1" />
+                <input class="num-input vec-in" id="u2" type="number" value="2" />
+                <input class="num-input vec-in" id="u3" type="number" value="0" />
+                <span>)</span>
+              </div>
+              <div class="vec-input-row">
+                <label for="v1"><span class="vec">v</span> = (</label>
+                <input class="num-input vec-in" id="v1" type="number" value="-2" />
+                <input class="num-input vec-in" id="v2" type="number" value="1" />
+                <input class="num-input vec-in" id="v3" type="number" value="3" />
+                <span>)</span>
+              </div>
+            </div>
+            <div class="lab-result" id="vec-output"></div>
+          </div>
+        </div>
+
+        <div class="tip-box">
+          <strong>Truco de examen:</strong> recuerda la diferencia en 1 segundo: <em>escalar</em> = número (para ángulos y comprobar 90°); <em>vectorial</em> = vector nuevo perpendicular a los dos que tenías.
+        </div>
+      </article>
+
+      <!-- TEMA 5: RECTAS Y PLANOS -->
+      <article class="topic-card geometria" id="rectas-planos">
+        <div class="topic-top">
+          <h3>5. Puntos, rectas y planos en el espacio</h3>
+          <span class="topic-num">Tema 5 · Geometría</span>
+        </div>
+
+        <div class="one-liner">
+          <strong>En una frase:</strong> para escribir una <strong>recta</strong> solo necesitas <em>1 punto + 1 vector director</em>; para escribir un <strong>plano</strong> solo necesitas <em>1 punto + 1 vector normal</em> (perpendicular al plano).
+        </div>
+
+        <div class="grid-2">
+          <div class="sub-box">
+            <h4>La recta r · Punto P(p<sub>1</sub>, p<sub>2</sub>, p<sub>3</sub>) y director <span class="vec">d</span>(d<sub>1</sub>, d<sub>2</sub>, d<sub>3</sub>)</h4>
+            <p><strong>1. Paramétricas</strong> (las más cómodas para casi todo):</p>
+            <div class="formula left" style="line-height: 1.45;">
+              <div>
+                x = p<sub>1</sub> + d<sub>1</sub>·t<br />
+                y = p<sub>2</sub> + d<sub>2</sub>·t<br />
+                z = p<sub>3</sub> + d<sub>3</sub>·t
+              </div>
+            </div>
+            <p><strong>2. Continua</strong> (despejando <em>t</em> e igualando):</p>
+            <div class="formula">
+              <span class="frac"><span class="num">x − p<sub>1</sub></span><span class="den">d<sub>1</sub></span></span>
+              <span>=</span>
+              <span class="frac"><span class="num">y − p<sub>2</sub></span><span class="den">d<sub>2</sub></span></span>
+              <span>=</span>
+              <span class="frac"><span class="num">z − p<sub>3</sub></span><span class="den">d<sub>3</sub></span></span>
+            </div>
+            <p><strong>3. Implícita:</strong> intersección de dos planos. Para sacar su vector director haz <span class="math-inline"><span class="vec">n</span><sub>1</sub> × <span class="vec">n</span><sub>2</sub></span>.</p>
+          </div>
+
+          <div class="sub-box">
+            <h4>El plano π · Punto P y vector normal <span class="vec">n</span> = (A, B, C)</h4>
+            <p><strong>Ecuación general (o implícita):</strong></p>
+            <div class="formula">
+              <span><strong>A</strong>x + <strong>B</strong>y + <strong>C</strong>z + D = 0</span>
+            </div>
+            <ul>
+              <li>Los coeficientes de x, y, z te regalan al instante el <strong>vector normal</strong>: <span class="math-inline"><span class="vec">n</span> = (A, B, C)</span>.</li>
+              <li>Para hallar <strong>D</strong>, solo sustituye el punto P(x, y, z) en la ecuación.</li>
+              <li>Si te dan <strong>3 puntos A, B, C</strong> (o 1 punto y 2 vectores): calcula <span class="math-inline"><span class="vec">n</span> = <span class="vec">AB</span> × <span class="vec">AC</span></span> y ya tienes A, B y C.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="example-box">
+          <div class="callout-title">Ejemplo rápido · Plano que pasa por P(1, 0, 2) con vector normal <span class="vec">n</span> = (2, −1, 3)</div>
+          <p style="font-size: 0.92rem; color: var(--text-muted);">
+            1) Escribimos la estructura con <span class="math-inline"><span class="vec">n</span></span>: <span class="math-inline">2x − y + 3z + D = 0</span>.<br />
+            2) Sustituimos <span class="math-inline">P(1, 0, 2)</span>: <span class="math-inline">2(1) − 0 + 3(2) + D = 0 ⇒ 8 + D = 0 ⇒ D = −8</span>.<br />
+            3) Solución: <strong><span class="math-inline">2x − y + 3z − 8 = 0</span></strong>.
+          </p>
+        </div>
+
+        <div class="tip-box">
+          <strong>Truco de examen:</strong> si quieres encontrar el punto donde una recta corta a un plano, pon la recta en <strong>paramétricas</strong>, sustituye x, y, z en la ecuación del plano, despeja <em>t</em> y vuelve a sustituir <em>t</em> en la recta. ¡Nunca falla!
+        </div>
+      </article>
+
+      <!-- TEMA 6: POSICIONES Y MÉTRICA BÁSICA -->
+      <article class="topic-card geometria" id="metrica">
+        <div class="topic-top">
+          <h3>6. Posiciones relativas y 3 fórmulas de métrica</h3>
+          <span class="topic-num">Resumen exprés · Geometría</span>
+        </div>
+
+        <div class="one-liner">
+          <strong>En una frase:</strong> casi todos los problemas de geometría se resuelven mirando si los vectores (<span class="math-inline"><span class="vec">d</span></span> de la recta, <span class="math-inline"><span class="vec">n</span></span> del plano) son <strong>paralelos</strong> o <strong>perpendiculares</strong>.
+        </div>
+
+        <div class="grid-2">
+          <div class="sub-box">
+            <h4>Relación entre recta (<span class="vec">d</span>) y plano (<span class="vec">n</span>)</h4>
+            <p style="margin-bottom: 0.45rem;">¡Ojo! El vector <span class="math-inline"><span class="vec">n</span></span> sale <em>perpendicular</em> del plano, así que funciona al revés:</p>
+            <ul>
+              <li><strong>Recta paralela al plano:</strong> <span class="math-inline"><span class="vec">d</span> ⊥ <span class="vec">n</span></span> (su producto escalar es <strong>0</strong>).</li>
+              <li><strong>Recta perpendicular al plano:</strong> <span class="math-inline"><span class="vec">d</span> ∥ <span class="vec">n</span></span> (son proporcionales; puedes usar <span class="math-inline"><span class="vec">n</span></span> como vector director).</li>
+            </ul>
+          </div>
+
+          <div class="sub-box">
+            <h4>Distancia de un punto P(x<sub>0</sub>, y<sub>0</sub>, z<sub>0</sub>) a un plano π</h4>
+            <p>La fórmula estrella de la PAU (sustituir el punto arriba en valor absoluto y dividir por el módulo de <span class="math-inline"><span class="vec">n</span></span>):</p>
+            <div class="formula">
+              <span>d(P, π) =</span>
+              <span class="frac">
+                <span class="num">|Ax<sub>0</sub> + By<sub>0</sub> + Cz<sub>0</sub> + D|</span>
+                <span class="den">√(A² + B² + C²)</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="sub-box">
+            <h4>Ángulos (siempre entre 0° y 90°)</h4>
+            <ul>
+              <li><strong>Dos rectas</strong> o <strong>dos planos</strong>: usa <strong>coseno</strong> con valor absoluto:
+                <span class="math-inline">cos α = |<span class="vec">u</span>·<span class="vec">v</span>| / (|<span class="vec">u</span>|·|<span class="vec">v</span>|)</span>.
+              </li>
+              <li><strong>Recta y plano</strong>: usa <strong>seno</strong> con <span class="math-inline"><span class="vec">d</span></span> y <span class="math-inline"><span class="vec">n</span></span>:
+                <span class="math-inline">sen α = |<span class="vec">d</span>·<span class="vec">n</span>| / (|<span class="vec">d</span>|·|<span class="vec">n</span>|)</span>.
+              </li>
+            </ul>
+          </div>
+
+          <div class="sub-box">
+            <h4>Punto simétrico P' respecto a un plano π</h4>
+            <ul>
+              <li>1. Haz la recta perpendicular al plano que pasa por P (vector director = <span class="math-inline"><span class="vec">n</span></span>).</li>
+              <li>2. Halla el punto de corte <strong>M</strong> de esa recta con el plano.</li>
+              <li>3. Como M es el punto medio entre P y P': <span class="math-inline">P' = 2M − P</span>.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ==================== MINI-TEST INTERACTIVO ==================== -->
+    <section class="block-section" id="bloque-quiz" data-block="quiz">
+      <div class="block-header">
+        <span class="block-tag algebra" style="background:#f1f5f9;color:#0f172a;border-color:#cbd5e1;">Práctica</span>
+        <h2>Mini-test: comprueba lo básico</h2>
+      </div>
+
+      <div class="quiz-card">
+        <div class="quiz-top">
+          <p style="color: var(--text-muted); font-size: 0.94rem;">
+            8 preguntas rápidas (4 de Álgebra y 4 de Geometría) para afianzar las ideas esenciales.
+          </p>
+          <span class="score-pill" id="quiz-score">Aciertos: 0 / 8</span>
+        </div>
+
+        <div id="quiz-container"></div>
+
+        <button class="btn-reset" id="quiz-reset" type="button">Reiniciar test</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    Guía rápida de Álgebra y Geometría · 2º de Bachillerato (Matemáticas II) · Funciona 100% sin conexión y es imprimible.
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
